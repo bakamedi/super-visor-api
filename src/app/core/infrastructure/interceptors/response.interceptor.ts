@@ -1,19 +1,25 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 // src/core/infrastructure/interceptors/response.interceptor.ts
 import {
   CallHandler,
   ExecutionContext,
   Injectable,
   NestInterceptor,
-} from '@nestjs/common';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+} from "@nestjs/common";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class ResponseInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     return next.handle().pipe(
       map((rawResponse) => {
-        if (rawResponse && typeof rawResponse === 'object' && 'data' in rawResponse) {
+        if (
+          rawResponse &&
+          typeof rawResponse === "object" &&
+          "data" in rawResponse
+        ) {
           return rawResponse;
         }
 
