@@ -19,6 +19,7 @@ model Account {
   phone String @unique
 
   vehicles Vehicle[]
+  places   Place[]
 }
 
 model Vehicle {
@@ -31,6 +32,18 @@ model Vehicle {
   // Relación con Account
   accountId  Int
   account    Account   @relation(fields: [accountId], references: [id])
+}
+
+model Place {
+  id        Int       @id @default(autoincrement())
+  name      String
+  latitude  Float
+  longitude Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accountId Int
+  account   Account  @relation(fields: [accountId], references: [id])
 }
 
 enum StateType {

@@ -10,6 +10,6 @@ export class GetAllPUseCase implements UseCase<any, any> {
   async execute(): Promise<Prisma.VehicleGetPayload<any>[]> {
     const vehicles = await this.petRepository.getAll();
 
-    return vehicles;
+    return [];
   }
 }

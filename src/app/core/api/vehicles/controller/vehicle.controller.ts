@@ -1,11 +1,11 @@
-import { Controller, Get } from "@nestjs/common";
+import { Controller, Get } from '@nestjs/common';
 
-@Controller("vehicles")
+@Controller('vehicles')
 export class VehicleController {
   constructor() {}
 
-  @Get("")
+  @Get('')
   getAll() {
-    return "";
+    return '';
   }
 }
