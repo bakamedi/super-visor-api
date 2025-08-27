@@ -28,6 +28,7 @@ model Vehicle {
   stateType  StateType
   latitude   Float
   longitude  Float
+  alert      Int @default(0)
 
   // Relación con Account
   accountId  Int

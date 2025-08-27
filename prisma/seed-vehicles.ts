@@ -11,7 +11,7 @@ async function main() {
   console.log('Start seeding vehicles ...');
 
   // You can change the number of vehicles to create
-  const numberOfVehicles = 5;
+  const numberOfVehicles = 200;
 
   // You should have an account with id 1 in your database
   // or change this to an existing account id.
@@ -29,6 +29,7 @@ async function main() {
         latitude: faker.location.latitude({ min: -18.35, max: 0.2 }),
         longitude: faker.location.longitude({ min: -81.33, max: -68.65 }),
         accountId: accountId,
+        alert: faker.number.int({ min: 4, max: 20 }),
       },
     });
     console.log(`Created vehicle with id: ${vehicle.id}`);
