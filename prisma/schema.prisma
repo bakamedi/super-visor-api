@@ -17,4 +17,25 @@ model Account {
   id    Int    @id @default(autoincrement())
   name  String @unique
   phone String @unique
+
+  vehicles Vehicle[]
+}
+
+model Vehicle {
+  id         Int       @id @default(autoincrement())
+  name       String    @unique
+  stateType  StateType
+  latitude   Float
+  longitude  Float
+
+  // Relación con Account
+  accountId  Int
+  account    Account   @relation(fields: [accountId], references: [id])
+}
+
+enum StateType {
+  STOP
+  ONLINE
+  RUNNING
+  OFFLINE
 }
