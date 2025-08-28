@@ -18,8 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "seed:places": "ts-node prisma/seed-places.ts",
     "seed:account": "ts-node prisma/seed-account.ts",
+    "seed:places": "ts-node prisma/seed-places.ts",
     "seed:vehicles": "ts-node prisma/seed-vehicles.ts"
   },
   "dependencies": {
