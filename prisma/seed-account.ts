@@ -8,7 +8,7 @@ async function main() {
 
   const account = await prisma.account.create({
     data: {
-      name: 'Administrador', // O faker.name.fullName()
+      name: 'Administrador',
       phone: '999999999',
     },
   });
