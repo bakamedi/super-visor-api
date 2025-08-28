@@ -1,7 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { PrismaClient, StateType } from '@prisma/client';
 import { faker } from '@faker-js/faker';
 
@@ -26,8 +23,8 @@ async function main() {
         stateType: stateTypes[
           Math.floor(Math.random() * stateTypes.length)
         ] as StateType,
-        latitude: faker.location.latitude({ min: -18.35, max: 0.2 }),
-        longitude: faker.location.longitude({ min: -81.33, max: -68.65 }),
+        latitude: faker.location.latitude({ min: -12.15, max: -11.85 }),
+        longitude: faker.location.longitude({ min: -77.1, max: -76.9 }),
         accountId: accountId,
         alert: faker.number.int({ min: 4, max: 20 }),
       },
